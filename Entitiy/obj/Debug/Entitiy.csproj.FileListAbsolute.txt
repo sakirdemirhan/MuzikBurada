@@ -1,0 +1,42 @@
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Entitiy.dll.config
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Entitiy.dll
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Entitiy.pdb
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\EntityFramework.dll
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\EntityFramework.xml
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\obj\Debug\Entitiy.csprojResolveAssemblyReference.cache
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\obj\Debug\Entitiy.dll
+c:\Users\sores\documents\visual studio 2015\Projects\Muzik\Entitiy\obj\Debug\Entitiy.pdb
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Entitiy.dll.config
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Entitiy.dll
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Entitiy.pdb
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.dll
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.xml
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\obj\Debug\Entitiy.csprojResolveAssemblyReference.cache
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\obj\Debug\Entitiy.dll
+C:\Users\nuuklu\Desktop\Muzik\Entitiy\obj\Debug\Entitiy.pdb
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Entitiy.dll.config
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Entitiy.dll
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Entitiy.pdb
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.dll
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.xml
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\sores\Desktop\Muzik\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\sores\Desktop\Muzik\Entitiy\obj\Debug\Entitiy.csprojResolveAssemblyReference.cache
+C:\Users\sores\Desktop\Muzik\Entitiy\obj\Debug\Entitiy.dll
+C:\Users\sores\Desktop\Muzik\Entitiy\obj\Debug\Entitiy.pdb

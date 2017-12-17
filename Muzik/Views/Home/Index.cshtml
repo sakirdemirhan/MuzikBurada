@@ -1,0 +1,136 @@
+﻿@model List<Entitiy.Models.Tur>
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('http://www.pajimusic.com/couch/uploads/image/datei-24-08-16-18-09-13.jpeg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Kendinizi Gösterin</h3>
+                    <p>Yüzlerce grup arasında yerinizi alın.</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://images5.alphacoders.com/402/402221.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="color: black">Sahne Sizin</h3>
+                    <p style="color: black"><strong>En iyi şarkılarınızı burada paylaşın.</strong></p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('http://nebula.wsimg.com/eea3d198a37b05e5481fb2c0e208b915?AccessKeyId=DAAB320EEEB245F8F1C3&disposition=0&alloworigin=1')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Keşfedin ve Keşfedilin</h3>
+                    <p>Sizin gibi harika gruplar burada.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+<div class="container">
+
+    <h1 class="my-4 text-center">Farklı amatör müzik grupları ile tanışın.</h1>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <h4 class="card-header" style="background-color: white">@item.TurAdi</h4>
+                    <div class="card-body" style="background-color: #ff621b">
+                        <p class="card-text" style="color: white">@item.TurAciklama</p>
+                    </div>
+                    <div class="card-footer">
+                        <form action="/Home/Kesfet/@item.TurID" method="post">
+                            <input type="submit" class="btn btn-primary col-md-6" value="Keşfet"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+        
+        @*<div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header" style="background-color: white">Rock Müzik</h4>
+                <div class="card-body" style="background-color: #ff621b">
+                    <p class="card-text" style="color: white">
+                        Rock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...Rock Müzik 1990 yılında..
+                        Rock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...Rock Müzik 1990 yılında....</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary col-md-6">Keşfet</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header" style="background-color: white">Rock Müzik</h4>
+                <div class="card-body" style="background-color: #ff621b">
+                    <p class="card-text" style="color: white">Rock Müzik 1990 yılında...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary col-md-6">Keşfet</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header" style="background-color: white">Rock Müzik</h4>
+                <div class="card-body" style="background-color: #ff621b">
+                    <p class="card-text" style="color: white">Rock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...
+                        Rock MüzRock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...
+                        Rock Müzik 1990 yılında...Rock Müzik 1990 yılında...yılında...Rock Müzik 1990 yılında...
+                        dsvdsvsdvsdv</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary col-md-6">Keşfet</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header" style="background-color: white">Rock Müzik</h4>
+                <div class="card-body" style="background-color: #ff621b">
+                    <p class="card-text" style="color: white">Rock Müzik 1990 yılında...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary col-md-6">Keşfet</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header" style="background-color: white">Rock Müzik</h4>
+                <div class="card-body" style="background-color: #ff621b">
+                    <p class="card-text" style="color: white">Rock Müzik 1990 yılında...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary col-md-6">Keşfet</a>
+                </div>
+            </div>
+        </div>*@
+
+
+    </div>
+    
+
+</div>
