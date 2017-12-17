@@ -68,30 +68,36 @@ namespace Muzik.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Posta*")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Şifre*")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Şifreyi Doğrula*")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
         //kendi kullanıcı modelim
+        [Display(Name = "Grup Adı*")]
         [Required(ErrorMessage = "Zorunlu alan!")]
         [MaxLength(100)]
         public string GrupAdi { get; set; }
+        [Display(Name = "Kendinizi Tanıtın*")]
         [Required(ErrorMessage = "Zorunlu alan!")]
         public string Aciklama { get; set; }
+        [Display(Name = "Web Sitesi")]
         public string WebSitesi { get; set; }
+        [Display(Name = "Grup Üyeleri")]
         public string GrupUyeleri { get; set; }
         public string Resim { get; set; }
+        [Display(Name = "YouTube Linki")]
         public string YoutubeLinki { get; set; }
         public int? TurID { get; set; }
+        [Display(Name = "Grubun Kuruluş Tarihi")]
         public DateTime? KurulusTarihi { get; set; }
     }
 

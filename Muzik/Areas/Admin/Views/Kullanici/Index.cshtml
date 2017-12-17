@@ -1,4 +1,5 @@
-﻿@model List<Entitiy.Models.Tur>
+﻿
+@model IEnumerable<Entitiy.Models.Kullanici>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -10,8 +11,6 @@
 		
         
         <div class="col-md-12">
-            <a href="/Admin/Tur/TurEkle"><h4>Yeni Tür Ekle <i class="fa fa-plus-circle"></i></h4></a>
-            
             <div class="table-responsive">
 
 
@@ -19,9 +18,9 @@
 
                     <thead>
 
-                    <th>Müzik Türü</th>
-                    <th>Açıklama</th>
-                    <th>Düzenle</th>
+                    <th>Email</th>
+                    <th>Grup Adı</th>
+                    <th>Grup Üyeleri</th>
                     <th>Sil</th>
 
                     </thead>
@@ -29,13 +28,11 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@item.TurAdi</td>
-                            <td>@item.TurAciklama</td>
+                            <td>@item.Email</td>
+                            <td>@item.GrupAdi</td>
+                            <td>@item.GrupUyeleri</td>
                             <td>
-                                <a href="/Admin/Tur/TurDuzenle/@item.TurID"class="btn btn-warning"><i class="fa fa-pencil-square"></i></a>
-                            </td>
-                            <td>
-                                <button  type="button" class="btn btn-danger silBtn" data-toggle="modal" data-target="#myModal" rel="@item.TurID"><i class="fa fa-times"></i></button>
+                                <button  type="button" class="btn btn-danger silBtn" data-toggle="modal" data-target="#myModal" rel="@item.Id"><i class="fa fa-times"></i></button>
                             </td>
                         </tr>
                     }
@@ -84,15 +81,15 @@
     </div>
 </div>
 <script>
-    var id = 0;
+    var id = "";
     $(".silBtn").click(function() {
-       id =  $(this).attr("rel");
+        id =  $(this).attr("rel");
         console.log(id);
     });
     $("#modalBtnSil").click(function () {
         
         $.ajax({
-            url: '/Admin/Tur/TurSil/' + id,
+            url: '/Admin/Kullanici/KullaniciSil/' + id,
             type: "POST",
             success: function (data) {
                 alert(data);
@@ -105,3 +102,4 @@
     });
     
 </script>
+

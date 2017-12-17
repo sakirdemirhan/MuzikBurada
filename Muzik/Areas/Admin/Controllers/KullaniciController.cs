@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BLL;
 
 namespace Muzik.Areas.Admin.Controllers
 {
@@ -11,7 +12,16 @@ namespace Muzik.Areas.Admin.Controllers
         // GET: Admin/Kullanici
         public ActionResult Index()
         {
-            return View();
+            TurlerRep rep = new TurlerRep();
+            var liste = rep.GetAllUser();
+            return View(liste);
+        }
+        [HttpPost]
+        public JsonResult KullaniciSil(string id)
+        {
+            TurlerRep rep = new TurlerRep();
+            rep.DeleteUser(id);
+            return Json("Kayıt Başarıyla Silindi.");
         }
     }
 }

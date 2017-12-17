@@ -31,6 +31,13 @@ namespace BLL
             var liste = MyContext.db.Users.ToList();
             return liste;
         }
+        public void DeleteUser(string id)
+        {
+            var user = MyContext.db.Users.Find(id);
+            MyContext.db.Users.Remove(user);
+            MyContext.db.SaveChanges();
+            
+        }
         //public List<T> Search(string value)
         //{
         //    if (MyContext.db == null) MyContext.db = new MyContext();

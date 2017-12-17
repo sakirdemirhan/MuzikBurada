@@ -145,7 +145,7 @@ namespace Muzik.Controllers
         {
             TurlerRep rep = new TurlerRep();
 
-            ViewData["Tur"] = rep.GetAll();
+            ViewData["Tur"] = rep.GetAll().Where(x=>x.TurAdi!="_silindi");
             return View();
         }
 

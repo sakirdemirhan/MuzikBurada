@@ -49,7 +49,7 @@ namespace Muzik.Areas.Admin.Controllers
             tur.TurAdi = "_silindi";
             tur.TurAciklama = "";
             rep.Update(tur);
-            return Json("Silme Gerçekleşti");
+            return Json("Kayıt Başarıyla Silindi.");
         }
     }
 }
