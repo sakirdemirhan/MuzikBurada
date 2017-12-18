@@ -39,7 +39,7 @@ namespace Muzik.Controllers
         public ActionResult Kesfet()
         {
             TurlerRep rep = new TurlerRep();
-            var liste = rep.GetAllUser().Where(x=>x.KullaniciTur.TurAdi!="_silindi");
+            var liste = rep.GetAllUser().Where( x=>x.Email != "blogmoderator@admin.com" && x.KullaniciTur.TurAdi != "_silindi");
             //ViewData["Model"] = liste;
             return View(liste);
         }

@@ -50,3 +50,6 @@ C:\Users\sores\Source\Repos\MuzikBurada\DAL\bin\Debug\Microsoft.AspNet.Identity.
 C:\Users\sores\Source\Repos\MuzikBurada\DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\sores\Source\Repos\MuzikBurada\DAL\obj\Debug\DAL.dll
 C:\Users\sores\Source\Repos\MuzikBurada\DAL\obj\Debug\DAL.pdb
+C:\Users\sores\Source\Repos\MuzikBurada\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\sores\Source\Repos\MuzikBurada\DAL\obj\Debug\DAL.Migrations.rol.resources
+C:\Users\sores\Source\Repos\MuzikBurada\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache

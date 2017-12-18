@@ -18,13 +18,8 @@ namespace DAL
         }
 
         public virtual DbSet<Tur> Turler { get; set; }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<Kullanici>()
-            //.HasRequired(b => b.KullaniciTur)
-            //.WithMany(u => u.)
-            //.HasConstraint((Kullanici b, Tur t) => b.TurID == t.TurID);
-        }
+        public virtual DbSet<Blog> Bloglar { get; set; }
+        public virtual DbSet<Yorum> Yorumlar { get; set; }
+
     }
 }

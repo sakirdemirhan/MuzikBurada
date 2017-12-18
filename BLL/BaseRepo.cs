@@ -28,7 +28,7 @@ namespace BLL
 
         public IEnumerable<Kullanici> GetAllUser()
         {
-            var liste = MyContext.db.Users.ToList();
+            var liste = MyContext.db.Users.ToList().Where(x=>x.Email!="admin@admin.com");
             return liste;
         }
         public void DeleteUser(string id)

@@ -57,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201712181922013_rol.cs" />
+    <Compile Include="Migrations\201712181922013_rol.Designer.cs">
+      <DependentUpon>201712181922013_rol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,11 @@
       <Project>{ce8d88e2-8cd3-4815-90e8-72bd12101b86}</Project>
       <Name>Entitiy</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712181922013_rol.resx">
+      <DependentUpon>201712181922013_rol.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
