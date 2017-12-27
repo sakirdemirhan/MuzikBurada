@@ -8,4 +8,6 @@ using System.Threading.Tasks;
 namespace BLL
 {
     public class TurlerRep : BaseRepo<Tur> { }
+    public class BlogRep : BaseRepo<Blog> { }
+    public class YorumRep : BaseRepo<Yorum> { }
 }

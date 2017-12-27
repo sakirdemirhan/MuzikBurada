@@ -9,6 +9,8 @@ namespace Entitiy.Models
         [Key]
         public int BlogID { get; set; }
         public string Baslik { get; set; }
+        public string Icerik { get; set; }
+        public string Etiket { get; set; }
         public int GoruntulenmeSayisi { get; set; }
         public DateTime EklenmeTarihi { get; set; }
         public List<Yorum> Yorumlar { get; set; }

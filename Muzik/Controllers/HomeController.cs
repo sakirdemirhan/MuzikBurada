@@ -31,10 +31,7 @@ namespace Muzik.Controllers
 
             return View();
         }
-        public ActionResult TurDetay()
-        {
-            return View();
-        }
+        
 
         public ActionResult Kesfet()
         {

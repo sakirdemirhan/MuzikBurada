@@ -15,14 +15,22 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .resim {
+        
+        display: block;
+        margin: auto;
+        width: 1000px;
+        height: 600px;
+        opacity: 0.5;
+    }
 </style>
 
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <img src="@Model.Resim" style="max-width: 100%; max-height: 100%; opacity: 0.5;"/>
-            <div class="centered"><h1>@Model.GrupAdi</h1></div>
+            <img src="@Model.Resim" class="resim"/>
+            <div class="centered"><h1 style="font-size: 100px;">@Model.GrupAdi</h1></div>
         </div>
         <div class="col-md-12">
             <hr/>
@@ -45,10 +53,10 @@
                 <div class="card-body" style="background-color: white">
                     <p class="card-text" style="color: black">
                         <ul>
-                            <li>Tür:@Model.KullaniciTur.TurAdi</li>
-                            <li>Kuruluş Tarihi:@Model.KurulusTarihi</li>
-                            <li>Üyeler:@Model.GrupUyeleri</li>
-                            <li>Website:@Model.WebSite</li>
+                            <li>Tür: @Model.KullaniciTur.TurAdi</li>
+                            <li>Kuruluş Tarihi: @Model.KurulusTarihi.Value.ToShortDateString()</li>
+                            <li>Üyeler: @Model.GrupUyeleri</li>
+                            <li>Website: @Model.WebSite</li>
                         </ul>
                     </p>
                 </div>

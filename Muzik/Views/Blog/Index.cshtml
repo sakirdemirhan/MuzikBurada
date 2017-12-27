@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Entitiy.Models.Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+<!-- Page Heading/Breadcrumbs -->
+<p>
+    <h1 class="text-center">En Son Eklenen Blog Yazıları</h1>
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                        @Html.Raw((item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik))
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">@item.Baslik</h2>
+                    <p class="card-text">@item.EklenmeTarihi.ToShortDateString()</p>
+                    <a href="/Blog/Detail/@item.BlogID" class="btn btn-primary">Daha Fazla &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Etiketler: @{
+                           var array = item.Etiket.Split(',');
+                           foreach (var i in array)
+                           {
+                               <a href="/Home/tags/@i.Trim()">
+                                   <span class="badge">#@i.Trim()</span>
+                               </a>
+                                
+                           }
+                       }
+        </div>
+    </div>
+}
+</div>
