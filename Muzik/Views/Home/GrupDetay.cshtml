@@ -3,9 +3,14 @@
 @{
     ViewBag.Title = "GrupDetay";
     string video = "";
+    string kurulusTarihi = "-";
     if (Model.YoutubeLinki != null)
     {
         video = Model.YoutubeLinki.Replace("watch?v=", "embed/");
+    }
+    if (Model.KurulusTarihi != null)
+    {
+        kurulusTarihi = Model.KurulusTarihi.Value.ToShortDateString();
     }
 }
 <style>
@@ -54,7 +59,7 @@
                     <p class="card-text" style="color: black">
                         <ul>
                             <li>Tür: @Model.KullaniciTur.TurAdi</li>
-                            <li>Kuruluş Tarihi: @Model.KurulusTarihi.Value.ToShortDateString()</li>
+                            <li>Kuruluş Tarihi: @kurulusTarihi</li>
                             <li>Üyeler: @Model.GrupUyeleri</li>
                             <li>Website: @Model.WebSite</li>
                         </ul>

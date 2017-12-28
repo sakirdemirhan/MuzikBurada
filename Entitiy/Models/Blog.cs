@@ -13,8 +13,7 @@ namespace Entitiy.Models
         public string Etiket { get; set; }
         public int GoruntulenmeSayisi { get; set; }
         public DateTime EklenmeTarihi { get; set; }
-        public List<Yorum> Yorumlar { get; set; }
-
+        
         public Blog()
         {
             EklenmeTarihi = DateTime.Now;

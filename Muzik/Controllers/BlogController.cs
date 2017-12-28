@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BLL;
 using Entitiy.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Muzik.Controllers
 {
@@ -44,6 +45,24 @@ namespace Muzik.Controllers
             BlogRep rep = new BlogRep();
             var blog = rep.GetById(id);
             return View(blog);
+        }
+
+        public ActionResult Yorum(int id)
+        {
+            YorumRep rep = new YorumRep();
+            var liste = rep.GetAll().Where(x => x.BlogYorum.BlogID == id);
+            return View(liste);
+        }
+
+        [HttpPost]
+        public ActionResult YorumYap(Yorum yorum, int id)
+        {
+            YorumRep rep = new YorumRep();
+            yorum.BlogYorumID = id;
+            yorum.YorumYapanId = User.Identity.GetUserId();
+            yorum.EklenmeTarihi = DateTime.Now;
+            rep.Insert(yorum);
+            return RedirectToAction("Detail", "Blog", new { @id = id });
         }
     }
 }

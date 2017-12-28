@@ -71,3 +71,12 @@
     
 
 </div>
+@if (User.Identity.IsAuthenticated == false)
+{
+    <audio autoplay loop>
+        <source src="~/Content/Upload/background.mp3" type="audio/mpeg" />
+    </audio>
+    <script>
+        alert("Bu sayfada müzik çalacak. Ona göre kendinizi hazırlayın :)");
+    </script>
+}

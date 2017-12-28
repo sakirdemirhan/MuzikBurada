@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Entitiy.Models.Yorum>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BlogYorum.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciYorum.GrupAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YorumIcerik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EklenmeTarihi)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlogYorum.Baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciYorum.GrupAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YorumIcerik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EklenmeTarihi)
+        </td>
+    </tr>
+}
+
+</table>
