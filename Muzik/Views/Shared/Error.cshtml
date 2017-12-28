@@ -4,6 +4,32 @@
     ViewBag.Title = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<style>
+    .error-template {padding: 40px 15px;text-align: center;}
+    .error-actions {margin-top:15px;margin-bottom:15px;}
+    .error-actions .btn { margin-right:10px; }
+</style>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Hay aksi !
+                </h1>
+                <h2>
+                    Sayfa Bulunamadı - 404
+                </h2>
+                <div class="error-details">
+                    Bir şeyler ters gitti. En iyisi usulca anasayfaya dönün :)
+                </div>
+                <div class="error-actions">
+                    <a href="/Home/Index" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Anasayfa</a>
+                    @*</a><a href="/Home/Iletisim" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Bize Bildirin </a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
