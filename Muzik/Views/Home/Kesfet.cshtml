@@ -1,9 +1,10 @@
 ﻿@using System.Collections
 @using Entitiy.Models
+@using Microsoft.Ajax.Utilities
 @model IEnumerable<Entitiy.Models.Kullanici>
 
 @{
-    ViewBag.Title = "Kesfet";
+    ViewBag.Title = "Keşfet";
 }
 
 <div class="container">
@@ -31,12 +32,31 @@
                 </div>
             </div>
             <div class="card-footer text-muted">
-                Kuruluş Tarihi: @item.KurulusTarihi
-                <a href="#">Tür: @item.KullaniciTur.TurAdi</a>
+                Kuruluş Tarihi: @{
+                                    if (item.KurulusTarihi == null)
+                                    {
+                                        <b>"Belirtilmemiş"</b>
+                                    }
+                                    else
+                                    {
+                                        <b>@item.KurulusTarihi.Value.ToShortDateString()</b>
+                                    }
+                                }
+                - Tür: <b>@item.KullaniciTur.TurAdi</b>
+                - Grup Üyeleri: @{
+                                       if (item.GrupUyeleri==null)
+                                       {
+                                           <b>"Belirtilmemiş"</b>
+                                       }
+                                       else
+                                       {
+                                           <b>@item.GrupUyeleri</b>
+                                       }
+                                   }
             </div>
         </div>
     }
-    <!-- Blog Post -->
+
     
 
 

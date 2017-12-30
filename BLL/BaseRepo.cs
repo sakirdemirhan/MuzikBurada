@@ -38,13 +38,7 @@ namespace BLL
             MyContext.db.SaveChanges();
             
         }
-        //public List<T> Search(string value)
-        //{
-        //    if (MyContext.db == null) MyContext.db = new MyContext();
-        //    List<T> liste = db.Set<T>().ToList();
-        //    return liste;
-        //}
-
+        
         public void DetachList(List<T> liste)
         {
             liste.ForEach(group => MyContext.db.Entry(group).State = System.Data.Entity.EntityState.Detached);
@@ -68,6 +62,12 @@ namespace BLL
         public void Update(T obj)
         {
             MyContext.db.Set<T>().AddOrUpdate(obj);
+            //MyContext.db.Entry(obj).State = System.Data.Entity.EntityState.Modified;
+            MyContext.db.SaveChanges();
+        }
+        public void UpdateUser(Kullanici obj)
+        {
+            MyContext.db.Users.AddOrUpdate(obj);
             //MyContext.db.Entry(obj).State = System.Data.Entity.EntityState.Modified;
             MyContext.db.SaveChanges();
         }

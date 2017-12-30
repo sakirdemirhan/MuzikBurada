@@ -24,19 +24,18 @@
         
         display: block;
         margin: auto;
-        width: 1000px;
+        width: 100%;
         height: 600px;
-        opacity: 0.5;
+        /*opacity: 0.5;*/
+        filter: brightness(40%);
     }
 </style>
 
-
+<img src="@Model.Resim" class="resim"/>
+<div class="centered"><h1 style="font-size: 100px; color:white">@Model.GrupAdi</h1></div>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <img src="@Model.Resim" class="resim"/>
-            <div class="centered"><h1 style="font-size: 100px;">@Model.GrupAdi</h1></div>
-        </div>
+       
         <div class="col-md-12">
             <hr/>
         </div>
@@ -83,13 +82,31 @@
                 <br />
                 <br />
             </p>
-            <a href="#" class="btn btn-primary centered">
+            <button class="btn btn-primary centered">
                 <i class="fa fa-thumbs-up fa-5x">
                 </i>
                 <h4>Beğen</h4>
-            </a>
+            </button>
         </div>
         
     </div>
     
 </div>
+<script src="/Content/vendor/jquery/jquery.min.js"></script>
+<script>
+
+    //console.log("buraya");
+    $(".btn-primary").click(function() {
+        alert("buton içi");
+        var idd = "@Model.Id";
+        $.ajax({
+            url: "/Home/Begen/" + idd,
+            method: "POST",
+            success: function(cevap) {
+                alert(cevap);
+            }
+
+        });
+
+    });
+</script>

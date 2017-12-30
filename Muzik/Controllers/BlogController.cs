@@ -15,7 +15,7 @@ namespace Muzik.Controllers
         public ActionResult Index()
         {
             BlogRep rep = new BlogRep();
-            var liste = rep.GetAll();
+            var liste = rep.GetAll().OrderByDescending(x=>x.EklenmeTarihi);
             return View(liste);
         }
 
@@ -63,6 +63,13 @@ namespace Muzik.Controllers
             yorum.EklenmeTarihi = DateTime.Now;
             rep.Insert(yorum);
             return RedirectToAction("Detail", "Blog", new { @id = id });
+        }
+        public ActionResult tags(string id)
+        {
+            BlogRep rep = new BlogRep();
+            var liste = rep.GetAll().Where(x => x.Etiket.Contains(id));
+            ViewBag.tag = id;
+            return View(liste);
         }
     }
 }

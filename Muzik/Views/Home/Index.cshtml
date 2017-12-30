@@ -1,7 +1,7 @@
 ﻿@model List<Entitiy.Models.Tur>
-    @{
-        ViewBag.Title = "Anasayfa";
-    }
+@{
+    ViewBag.Title = "Anasayfa";
+}
 <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -58,25 +58,63 @@
                     </div>
                     <div class="card-footer">
                         <form action="/Home/Kesfet/@item.TurID" method="post">
-                            <input type="submit" class="btn btn-primary col-md-6" value="Keşfet"/>
+                            <input type="submit" class="btn btn-primary col-md-6" value="Keşfet" />
                         </form>
                     </div>
                 </div>
             </div>
         }
-        
-        
+
+
 
     </div>
-    
+
 
 </div>
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
 @if (User.Identity.IsAuthenticated == false)
 {
-    <audio autoplay loop>
+    <style>
+        #mscbasla {
+            position: fixed;
+            bottom: 0;
+        }
+
+        #mscdur {
+            position: fixed;
+            margin: auto;
+            bottom: 0;
+        }
+    </style>
+    <button onclick="playVid()" class="mscBtn" id="mscbasla" type="button"><i class="fa fa-play"></i></button>
+    <audio autoplay loop id="music">
         <source src="~/Content/Upload/background.mp3" type="audio/mpeg" />
     </audio>
+
     <script>
         alert("Bu sayfada müzik çalacak. Ona göre kendinizi hazırlayın :)");
     </script>
+    <script>
+        var vid = document.getElementById("music");
+        var kontrol = 1;
+        function playVid() {
+            if (kontrol === 0) {
+                vid.play();
+                kontrol = 1;
+                $("#mscbasla").css("background-color", "red");
+                $("#mscbasla").empty();
+                $("#mscbasla").append('<i class="fa fa-pause"></i>');
+            } else {
+                vid.pause();
+                kontrol = 0;
+                $("#mscbasla").css("background-color", "green");
+                $("#mscbasla").empty();
+                $("#mscbasla").append('<i class="fa fa-play"></i>');
+            }
+
+        }
+
+
+    </script>
+
 }
