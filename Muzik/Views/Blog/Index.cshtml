@@ -28,7 +28,11 @@
             </div>
         </div>
         <div class="card-footer text-muted">
-            Etiketler: @{
+            <i class="fa fa-eye"></i> Görüntülenme: <b>@item.GoruntulenmeSayisi</b>  -
+            <i class="fa fa-comment-o"></i> Yorum: <b>@Muzik.Controllers.BlogController.YorumSayisi(item.BlogID)</b>  - 
+
+
+            <i class="fa fa-hashtag"></i> Etiketler: @{
                            var array = item.Etiket.Split(',');
                            foreach (var i in array)
                            {
@@ -38,7 +42,7 @@
                                 
                            }
                        }
-        </div>
+            </div>
     </div>
 }
 </div>

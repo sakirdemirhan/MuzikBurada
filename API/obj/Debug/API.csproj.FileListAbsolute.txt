@@ -265,6 +265,5 @@ C:\Users\sores\Source\Repos\MuzikBurada\API\bin\Microsoft.Owin.Security.Google.x
 C:\Users\sores\Source\Repos\MuzikBurada\API\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\sores\Source\Repos\MuzikBurada\API\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\sores\Source\Repos\MuzikBurada\API\bin\System.Web.Http.Owin.xml
-C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.csprojResolveAssemblyReference.cache
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.dll
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.pdb

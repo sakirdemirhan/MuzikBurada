@@ -1,5 +1,6 @@
 ﻿
 @using System.Collections
+@using System.Text.RegularExpressions
 @using Entitiy.Models
 @model IEnumerable<Entitiy.Models.Kullanici>
 
@@ -8,7 +9,7 @@
 }
 
 @{
-    ViewBag.Title = "Sonuclar";
+        ViewBag.Title = "Sonuclar";
 }
 
 <div class="container">
@@ -17,7 +18,10 @@
 <p>
     <h1 class="text-center">Bulunan Gruplar</h1>
 </p>
-
+    @if (!Model.Any())
+    {
+        <div class="text-center col-md-12"><b>Aramanızla eşleşen bir grup yok !</b></div>
+    }
 @foreach (var item in Model)
 {
     <div class="card mb-4">
@@ -29,15 +33,35 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="card-title">@item.GrupAdi</h2>
-                    <p class="card-text">@item.Aciklama</p>
+                    <h2 class="card-title">@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(item.GrupAdi,Session["aranacak"].ToString(),"yellow",false))</h2>
+                    <p class="card-text">@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(item.Aciklama, Session["aranacak"].ToString(), "yellow", false))</p>
                     <a href="/Home/GrupDetay/@item.Id" class="btn btn-primary">Daha Fazla &rarr;</a>
                 </div>
             </div>
         </div>
         <div class="card-footer text-muted">
-            Kuruluş Tarihi: @item.KurulusTarihi
-            <a href="#">Tür: @item.KullaniciTur.TurAdi</a>
+            Kuruluş Tarihi: @{
+                                if (item.KurulusTarihi == null)
+                                {
+                                    <b>"Belirtilmemiş"</b>
+                                }
+                                else
+                                {
+                                    <b>@item.KurulusTarihi.Value.ToShortDateString()</b>
+                                }
+                            }
+            - Tür: <b>@item.KullaniciTur.TurAdi</b>
+            - Grup Üyeleri: @{
+                                if (item.GrupUyeleri==null)
+                                {
+                                    <b>"Belirtilmemiş"</b>
+                                }
+                                else
+                                {
+                                    <b>@item.GrupUyeleri</b>
+                                }
+                            }
+           
         </div>
     </div>
 }

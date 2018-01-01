@@ -8,6 +8,10 @@
     <p>
         <h1 class="text-center">Bulunan Bloglar</h1>
     </p>
+    @if (!Model.Any())
+    {
+        <div class="text-center col-md-12"><b>Aramanızla eşleşen bir blog yok !</b></div>
+    }
 
     @foreach (var item in Model)
     {
@@ -18,7 +22,7 @@
                         @Html.Raw((item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik))
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="card-title">@item.Baslik</h2>
+                        <h2 class="card-title">@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(item.Baslik, Session["aranacak"].ToString(), "yellow", false))</h2>
                         <p class="card-text">@item.EklenmeTarihi.ToShortDateString()</p>
                         <a href="/Blog/Detail/@item.BlogID" class="btn btn-primary">Daha Fazla &rarr;</a>
                     </div>
@@ -30,7 +34,7 @@
                                foreach (var i in array)
                                {
                                    <a href="/Blog/tags/@i.Trim()">
-                                       <span class="badge">#@i.Trim()</span>
+                                       <span class="badge">#@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(i.Trim(), Session["aranacak"].ToString(), "yellow", false))</span>
                                    </a>
                                 
                                }

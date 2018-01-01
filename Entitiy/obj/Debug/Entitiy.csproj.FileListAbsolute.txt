@@ -51,6 +51,5 @@ C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\bin\Debug\EntityFramework.xml
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\obj\Debug\Entitiy.csprojResolveAssemblyReference.cache
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\obj\Debug\Entitiy.dll
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\obj\Debug\Entitiy.pdb

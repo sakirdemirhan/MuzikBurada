@@ -19,6 +19,11 @@ namespace Muzik.Controllers
             return View(liste);
         }
 
+        public static string YorumSayisi(int id)
+        {
+            YorumRep rep = new YorumRep();
+            return rep.GetAll().Count(x => x.BlogYorumID == id).ToString();
+        }
         [Authorize(Roles = "Admin,BlogModerator")]
         [HttpGet]
         public ActionResult Create()
@@ -44,6 +49,9 @@ namespace Muzik.Controllers
         {
             BlogRep rep = new BlogRep();
             var blog = rep.GetById(id);
+            blog.GoruntulenmeSayisi++;
+            ViewBag.tags = blog.Etiket;
+            rep.Update(blog);
             return View(blog);
         }
 
