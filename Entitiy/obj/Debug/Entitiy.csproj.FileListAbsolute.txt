@@ -53,3 +53,4 @@ C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\bin\Debug\Microsoft.AspNet.Ident
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\obj\Debug\Entitiy.dll
 C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\obj\Debug\Entitiy.pdb
+C:\Users\sores\Source\Repos\MuzikBurada\Entitiy\obj\Debug\Entitiy.csprojResolveAssemblyReference.cache

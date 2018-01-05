@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using BLL;
 using Entitiy.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Muzik.Controllers
@@ -154,5 +155,58 @@ namespace Muzik.Controllers
                         RegexOptions.IgnoreCase));
 
         }
+
+        public ActionResult BilgilerimiDuzenle()
+        {
+            TurlerRep rep = new TurlerRep();
+            ViewData["Tur"] = rep.GetAll().Where(x => x.TurAdi != "_silindi");
+            var user = rep.GetAllUser().FirstOrDefault(x => x.Id == User.Identity.GetUserId());
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult BilgilerimiDuzenle(Kullanici kullanici, HttpPostedFileBase Resim)
+        {
+
+            TurlerRep rep = new TurlerRep();
+            var user = rep.GetAllUser().FirstOrDefault(x => x.Id == User.Identity.GetUserId());
+            user.Email = kullanici.Email;
+            user.UserName = kullanici.Email;
+            user.GrupAdi = kullanici.GrupAdi;
+            user.GrupUyeleri = kullanici.GrupUyeleri;
+            user.Aciklama = kullanici.Aciklama;
+            user.KurulusTarihi = kullanici.KurulusTarihi;
+            user.TurID = kullanici.TurID;
+            user.WebSite = kullanici.WebSite;
+            user.YoutubeLinki = kullanici.YoutubeLinki;
+            if (kullanici.Resim != null)
+            {
+                user.Resim = FileUpload(Resim);
+            }
+            else
+            {
+                user.Resim = user.Resim;
+            }
+            
+            rep.UpdateUser(user);
+            ViewData["Tur"] = rep.GetAll().Where(x => x.TurAdi != "_silindi");
+            return View();
+        }
+        private string FileUpload(HttpPostedFileBase file)
+        {
+
+            if (file != null)
+            {
+                string rastgele = Guid.NewGuid().ToString();
+                string ImageName = System.IO.Path.GetFileName(file.FileName);
+                string physicalPath = Server.MapPath("/Content/Upload/" + rastgele + ImageName);
+                string resim = "/Content/Upload/" + rastgele + ImageName;
+                //// save image in folder
+                file.SaveAs(physicalPath);
+                return resim;
+            }
+            return "";
+        }
+
     }
 }

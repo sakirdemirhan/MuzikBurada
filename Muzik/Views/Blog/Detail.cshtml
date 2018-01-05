@@ -1,8 +1,9 @@
 ﻿@model Entitiy.Models.Blog
 
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Blog Detay";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Etiketler = Model.Etiket;
 }
 
 <div class="container">
@@ -86,7 +87,7 @@
                                     foreach (var i in array)
                                     {
                                         <li>
-                                            <a href="/Home/tags/@i.Trim()"><span class="btn btn-default">#@i.Trim()</span></a>
+                                            <a href="/Blog/tags/@i.Trim()"><span class="btn btn-default">#@i.Trim()</span></a>
                                         </li>
 
                                     }

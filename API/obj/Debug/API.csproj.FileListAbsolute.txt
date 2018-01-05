@@ -267,3 +267,4 @@ C:\Users\sores\Source\Repos\MuzikBurada\API\bin\Microsoft.Owin.Security.Microsof
 C:\Users\sores\Source\Repos\MuzikBurada\API\bin\System.Web.Http.Owin.xml
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.dll
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.pdb
+C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.csprojResolveAssemblyReference.cache

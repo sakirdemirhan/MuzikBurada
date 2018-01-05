@@ -1,0 +1,81 @@
+﻿@using System.Collections
+@model Entitiy.Models.Kullanici
+@{
+    ViewBag.Title = "BilgilerimiDuzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("BilgilerimiDuzenle", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal col-md-6", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <br />
+            <h4 class="text-center">Bilgilerini Düzenle</h4>
+            <br />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.GrupAdi, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.GrupAdi, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.GrupUyeleri, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.GrupUyeleri, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Aciklama, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => m.Aciklama, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.KurulusTarihi, new { @class = "col-md-6 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.KurulusTarihi, new { @class = "form-control", placeholder = "1.1.2017" })
+                </div>
+            </div>
+            
+            <div class="form-group">
+                @Html.Label("Tür", new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownList("TurID", new SelectList((IEnumerable)ViewData["Tur"], "TurID", "TurAdi"), new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.WebSite, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.WebSite, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.YoutubeLinki, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.YoutubeLinki, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Resim, new { @class = "col-md-4 control-label" })
+                <div class="col-md-10">
+                    <input name="Resim" type="file" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-success col-md-10" value="Kaydol" />
+                </div>
+            </div>
+        }
+        <div class="col-md-6" style="background-image: url(http://www.mind-start.com/assets/images/Music.png); background-repeat: no-repeat;"></div>
+
+    </div>
+</div>
