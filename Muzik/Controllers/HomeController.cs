@@ -156,6 +156,7 @@ namespace Muzik.Controllers
 
         }
 
+        [Authorize]
         public ActionResult BilgilerimiDuzenle()
         {
             TurlerRep rep = new TurlerRep();
@@ -164,6 +165,7 @@ namespace Muzik.Controllers
             return View(user);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult BilgilerimiDuzenle(Kullanici kullanici, HttpPostedFileBase Resim)
         {

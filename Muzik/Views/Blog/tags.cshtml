@@ -17,7 +17,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @Html.Raw((item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik))
+                        @((item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik))
                     </div>
                     <div class="col-lg-6">
                         <h2 class="card-title">@item.Baslik</h2>

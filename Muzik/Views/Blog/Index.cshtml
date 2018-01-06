@@ -11,8 +11,11 @@
     <p>
         <h1 class="text-center">En Son Eklenen Blog Yazıları</h1>
     </p>
-
-    @foreach (var item in Model)
+    @if (User.IsInRole("Admin")|| User.IsInRole("BlogModerator"))
+    {
+        <a href="/Blog/Create"><h4>Yeni Blog Ekle <i class="fa fa-plus-circle"></i></h4></a>
+    }
+     @foreach (var item in Model)
     {
         <div class="card mb-4">
             <div class="card-body">

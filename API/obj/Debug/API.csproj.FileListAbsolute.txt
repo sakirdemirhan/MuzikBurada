@@ -268,3 +268,9 @@ C:\Users\sores\Source\Repos\MuzikBurada\API\bin\System.Web.Http.Owin.xml
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.dll
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.pdb
 C:\Users\sores\Source\Repos\MuzikBurada\API\obj\Debug\API.csprojResolveAssemblyReference.cache
+C:\Users\sores\Source\Repos\MuzikBurada\API\bin\BLL.dll
+C:\Users\sores\Source\Repos\MuzikBurada\API\bin\Entitiy.dll
+C:\Users\sores\Source\Repos\MuzikBurada\API\bin\DAL.dll
+C:\Users\sores\Source\Repos\MuzikBurada\API\bin\BLL.pdb
+C:\Users\sores\Source\Repos\MuzikBurada\API\bin\Entitiy.pdb
+C:\Users\sores\Source\Repos\MuzikBurada\API\bin\DAL.pdb

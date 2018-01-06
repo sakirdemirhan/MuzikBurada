@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<Entitiy.Models.Kullanici>
+@model List<Entitiy.Models.Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -8,9 +8,11 @@
 
 <div class="container">
     <div class="row">
-		
-        
+
+
         <div class="col-md-12">
+            <a href="/Blog/Create"><h4>Yeni Blog Ekle <i class="fa fa-plus-circle"></i></h4></a>
+
             <div class="table-responsive">
 
 
@@ -18,31 +20,27 @@
 
                     <thead>
 
-                    <th>Email</th>
-                    <th>Grup Adı</th>
-                    <th>Grup Üyeleri</th>
-                    <th class="text-center">Blog Moderatörü Yap</th>
+                    <th>Başlık</th>
+                    <th>Etiketler</th>
+                    <th>Eklenme Tarihi</th>
+                    <th>Görüntülenme</th>
                     <th>Sil</th>
 
                     </thead>
                     <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.Email</td>
-                            <td>@item.GrupAdi</td>
-                            <td>@item.GrupUyeleri</td>
-                            <td class="text-center">
-                                @if (item.Roles.FirstOrDefault(x => x.UserId == item.Id) == null)
-                                {
-                                    <button type="button" class="btn btn-success modBtn " data-toggle="modal2" data-target="#myModal2" rel="@item.Id"><i class="fa fa-check-circle"></i></button>
-                                }
-                            </td>
-                            <td>
-                                <button  type="button" class="btn btn-danger silBtn" data-toggle="modal" data-target="#myModal" rel="@item.Id"><i class="fa fa-times"></i></button>
-                            </td>
-                        </tr>
-                    }
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><a href="/Blog/Detail/@item.BlogID">@item.Baslik</a></td>
+                                <td>@item.Etiket</td>
+                                <td>@item.EklenmeTarihi.ToShortDateString()</td>
+                                <td>@item.GoruntulenmeSayisi</td>
+
+                                <td>
+                                    <button type="button" class="btn btn-danger silBtn" data-toggle="modal" data-target="#myModal" rel="@item.BlogID"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+                        }
 
 
                     </tbody>
@@ -51,14 +49,14 @@
 
                 <div class="clearfix"></div>
                 @*<ul class="pagination pull-right">
-                    <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                </ul>*@
+                        <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                    </ul>*@
 
             </div>
 
@@ -88,15 +86,15 @@
     </div>
 </div>
 <script>
-    var id = "";
+    var id = 0;
     $(".silBtn").click(function() {
         id =  $(this).attr("rel");
         console.log(id);
     });
     $("#modalBtnSil").click(function () {
-        
+
         $.ajax({
-            url: '/Admin/Kullanici/KullaniciSil/' + id,
+            url: '/Admin/BlogAdmin/BlogSil/' + id,
             type: "POST",
             success: function (data) {
                 alert(data);
@@ -107,6 +105,5 @@
             }
         });
     });
-    
-</script>
 
+</script>
