@@ -619,6 +619,7 @@
     <Content Include="Content\Upload\22ea4f30-a323-41c5-a120-6e0398c30b21slider2.jpg" />
     <Content Include="Content\Upload\70762944-f6c1-4ac4-a024-ce4531a2f323cvphoto.jpg" />
     <Content Include="Content\Upload\background.mp3" />
+    <Content Include="Content\Upload\default.png" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -667,6 +668,7 @@
     <Content Include="Areas\Admin\Content\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\BlogAdmin\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\muzikburada.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

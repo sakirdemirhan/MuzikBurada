@@ -194,6 +194,14 @@ namespace Muzik.Controllers
             ViewData["Tur"] = rep.GetAll().Where(x => x.TurAdi != "_silindi");
             return View();
         }
+        [Authorize]
+        [HttpPost]
+        public ActionResult KullaniciSil(string id)
+        {
+            TurlerRep rep = new TurlerRep();
+            rep.DeleteUser(id);
+            return Redirect("/Account/Cikis");
+        }
         private string FileUpload(HttpPostedFileBase file)
         {
 
@@ -207,7 +215,7 @@ namespace Muzik.Controllers
                 file.SaveAs(physicalPath);
                 return resim;
             }
-            return "";
+            return "/Content/Upload/default.png";
         }
 
     }

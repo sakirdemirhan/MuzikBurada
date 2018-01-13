@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Muzik.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TurController : Controller
     {
         // GET: Admin/Tur

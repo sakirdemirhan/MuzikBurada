@@ -8,6 +8,7 @@ using Entitiy.Models;
 
 namespace Muzik.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BlogAdminController : Controller
     {
         // GET: Admin/Blog

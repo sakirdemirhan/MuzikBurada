@@ -193,7 +193,9 @@ namespace Muzik.Controllers
                 }
                 AddErrors(result);
             }
+            TurlerRep rep = new TurlerRep();
 
+            ViewData["Tur"] = rep.GetAll().Where(x => x.TurAdi != "_silindi");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -210,7 +212,7 @@ namespace Muzik.Controllers
                 file.SaveAs(physicalPath);
                 return resim;
             }
-            return "";
+            return "/Content/Upload/default.png";
         }
         //
         // GET: /Account/ConfirmEmail

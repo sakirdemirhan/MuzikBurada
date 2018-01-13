@@ -9,7 +9,9 @@ namespace Entitiy.Models
         [Key]
         public int BlogID { get; set; }
         [Required(ErrorMessage = "Zorunlu alan!")]
+        [Display(Name = "Başlık")]
         public string Baslik { get; set; }
+        [Display(Name = "İçerik")]
         public string Icerik { get; set; }
         [Required(ErrorMessage = "Zorunlu alan!")]
         [MaxLength(100)]

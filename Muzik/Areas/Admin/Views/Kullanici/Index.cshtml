@@ -1,4 +1,7 @@
 ﻿
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using Muzik.Models
 @model IEnumerable<Entitiy.Models.Kullanici>
 @{
     ViewBag.Title = "Index";
@@ -33,9 +36,14 @@
                             <td>@item.GrupAdi</td>
                             <td>@item.GrupUyeleri</td>
                             <td class="text-center">
-                                @if (item.Roles.FirstOrDefault(x => x.UserId == item.Id) == null)
+                                @{
+                                    var _context = new ApplicationDbContext();
+                                    var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
+                                }
+                                @if (UserManager.IsInRole(item.Id,"BlogModerator")==false)
                                 {
-                                    <button type="button" class="btn btn-success modBtn " data-toggle="modal2" data-target="#myModal2" rel="@item.Id"><i class="fa fa-check-circle"></i></button>
+                                    //item.Roles.FirstOrDefault(x => x.UserId == item.Id) == null
+                                    <button type="button" class="btn btn-success modBtn " data-toggle="modal" data-target="#myModal2" rel="@item.Id"><i class="fa fa-check-circle"></i></button>
                                 }
                             </td>
                             <td>
@@ -66,7 +74,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- ModalDelete -->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -87,6 +95,7 @@
 
     </div>
 </div>
+
 <script>
     var id = "";
     $(".silBtn").click(function() {
@@ -110,3 +119,47 @@
     
 </script>
 
+<!-- ModalMpd -->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Moderatör Yap</h4>
+            </div>
+            <div class="modal-body">
+                <p><span class="alert alert-danger">Bu kullanıcıyı blog moderatörü yapmak istediğinizden emin misiniz ?</span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
+                <button type="button" id="modalBtnMod" class="btn btn-success" data-dismiss="modal">Onayla</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var id = "";
+    $(".modBtn").click(function() {
+        id =  $(this).attr("rel");
+        console.log(id);
+    });
+    $("#modalBtnMod").click(function () {
+
+        $.ajax({
+            url: '/Admin/Kullanici/ModYap/' + id,
+            type: "POST",
+            success: function (data) {
+                alert(data);
+                window.location.reload();
+            },
+            error: function () {
+                alert('Hata oluştu');
+            }
+        });
+    });
+
+</script>
