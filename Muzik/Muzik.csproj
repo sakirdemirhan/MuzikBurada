@@ -202,6 +202,7 @@
     <Compile Include="Areas\Admin\Controllers\TurController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -615,9 +616,7 @@
     <Content Include="Content\js\contact_me.js" />
     <Content Include="Content\js\jqBootstrapValidation.js" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Upload\157d7493-ab31-4e65-98a2-bb5dd68c8840pp.jpg" />
     <Content Include="Content\Upload\22ea4f30-a323-41c5-a120-6e0398c30b21slider2.jpg" />
-    <Content Include="Content\Upload\70762944-f6c1-4ac4-a024-ce4531a2f323cvphoto.jpg" />
     <Content Include="Content\Upload\background.mp3" />
     <Content Include="Content\Upload\default.png" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
@@ -669,6 +668,7 @@
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\BlogAdmin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\muzikburada.pubxml" />
+    <None Include="Properties\PublishProfiles\muzikburda.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -733,6 +733,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
