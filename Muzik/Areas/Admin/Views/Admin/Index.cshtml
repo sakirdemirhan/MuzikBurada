@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-12">
+            @ViewBag.YorumSayisi 
+            @ViewBag.BlogSayisi
+            @ViewBag.TurSayisi 
+            @ViewBag.KullaniciSayisi
+            <div class="clearfix"></div>
+        </div>
+
+        </div>
+    </div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Kayıt Sil</h4>
+            </div>
+            <div class="modal-body">
+                <p><span class="alert alert-danger">Bu kaydı silmek istediğinizden emin misiniz ?</span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
+                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Sil</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    var id = 0;
+    $(".silBtn").click(function() {
+        id =  $(this).attr("rel");
+        console.log(id);
+    });
+    $("#modalBtnSil").click(function () {
+
+        $.ajax({
+            url: '/Admin/BlogAdmin/BlogSil/' + id,
+            type: "POST",
+            success: function (data) {
+                alert(data);
+                window.location.reload();
+            },
+            error: function () {
+                alert('Kayıt silinirken hata oluştu');
+            }
+        });
+    });
+
+</script>
+

@@ -34,7 +34,7 @@ namespace DAL.Migrations
                 UserManager<Kullanici> mng = new UserManager<Kullanici>(str);
 
                 var admin = new Kullanici() { Email = "admin@admin.com", UserName = "Admin", GrupAdi = "Admin", Aciklama = "Yonetici" };
-                var blogModerator = new Kullanici() { Email = "blogmoderator@admin.com", UserName = "Moderator", GrupAdi = "Moderator",Aciklama = "YoneticiBlog"};
+                var blogModerator = new Kullanici() { Email = "blogmoderator@admin.com", UserName = "Moderator", GrupAdi = "Moderator", Aciklama = "YoneticiBlog" };
 
 
                 mng.Create(admin, "Asdf.123"); //2. parametre ifresi

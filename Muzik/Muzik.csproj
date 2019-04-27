@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -648,7 +649,6 @@
     <Content Include="Areas\Admin\Views\Tur\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Tur\TurDuzenle.cshtml" />
     <Content Include="Areas\Admin\Views\Kullanici\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Admin\Content\ckeditor\CHANGES.md" />
     <Content Include="Areas\Admin\Content\ckeditor\LICENSE.md" />
     <Content Include="Areas\Admin\Content\ckeditor\plugins\scayt\CHANGELOG.md" />
@@ -667,6 +667,7 @@
     <Content Include="Areas\Admin\Content\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\BlogAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\muzikburada.pubxml" />
     <None Include="Properties\PublishProfiles\muzikburda.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
