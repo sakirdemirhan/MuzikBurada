@@ -608,37 +608,17 @@
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Areas\Admin\Content\ckeditor\styles.js" />
-    <Content Include="Content\css\admin.css" />
     <Content Include="Content\css\modern-business.css" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\slider1.jpeg" />
     <Content Include="Content\img\slider2.jpg" />
     <Content Include="Content\img\slider3.jpg" />
-    <Content Include="Content\js\contact_me.js" />
-    <Content Include="Content\js\jqBootstrapValidation.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Upload\22ea4f30-a323-41c5-a120-6e0398c30b21slider2.jpg" />
     <Content Include="Content\Upload\background.mp3" />
     <Content Include="Content\Upload\default.png" />
-    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Content\vendor\jquery\jquery.js" />
-    <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\ai.0.15.0-build58334.js" />
-    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -670,18 +650,6 @@
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\muzikburada.pubxml" />
     <None Include="Properties\PublishProfiles\muzikburda.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -734,15 +702,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Scripts\" />
     <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
