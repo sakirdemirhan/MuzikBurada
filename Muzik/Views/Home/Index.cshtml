@@ -74,7 +74,7 @@
 <script src="~/Content/vendor/jquery/jquery.min.js"></script>
 @if (User.Identity.IsAuthenticated == false)
 {
-    <style>
+    @*<style>
         #mscbasla {
             position: fixed;
             bottom: 0;
@@ -93,8 +93,6 @@
 
     <script>
         alert("Bu sayfada müzik çalacak. Ona göre kendinizi hazırlayın :)");
-    </script>
-    <script>
         var vid = document.getElementById("music");
         var kontrol = 1;
         function playVid() {
@@ -111,10 +109,7 @@
                 $("#mscbasla").empty();
                 $("#mscbasla").append('<i class="fa fa-play"></i>');
             }
-
         }
-
-
-    </script>
+    </script>*@
 
 }
