@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Entitiy.Models.Blog>
 @{
-    ViewBag.Title = "tags";
+    ViewBag.Title = "Tags";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,7 +8,7 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <p>
-        <h1 class="text-center">" @ViewBag.tag " etiketine sahip makaleler</h1>
+        <h1 class="text-center"> Post includes " @ViewBag.tag "</h1>
     </p>
 
     @foreach (var item in Model)
@@ -17,17 +17,17 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @((item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik))
+                        @(Html.Raw("<p>" + (item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik) + "</p>"))
                     </div>
                     <div class="col-lg-6">
                         <h2 class="card-title">@item.Baslik</h2>
                         <p class="card-text">@item.EklenmeTarihi.ToShortDateString()</p>
-                        <a href="/Blog/Detail/@item.BlogID" class="btn btn-primary">Daha Fazla &rarr;</a>
+                        <a href="/Blog/Detail/@item.BlogID" class="btn btn-info">More &rarr;</a>
                     </div>
                 </div>
             </div>
             <div class="card-footer text-muted">
-                Etiketler: @{
+                Tags: @{
                                var array = item.Etiket.Split(',');
                                foreach (var i in array)
                                {

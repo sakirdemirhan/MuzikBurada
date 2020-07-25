@@ -8,13 +8,14 @@ namespace Entitiy.Models
     {
         [Key]
         public int BlogID { get; set; }
-        [Required(ErrorMessage = "Zorunlu alan!")]
-        [Display(Name = "Başlık")]
+        [Required(ErrorMessage = "Required Field !")]
+        [Display(Name = "Title")]
         public string Baslik { get; set; }
-        [Display(Name = "İçerik")]
+        [Display(Name = "Content")]
         public string Icerik { get; set; }
-        [Required(ErrorMessage = "Zorunlu alan!")]
+        [Required(ErrorMessage = "Required Field !")]
         [MaxLength(100)]
+        [Display(Name = "Tag")]
         public string Etiket { get; set; }
         public int GoruntulenmeSayisi { get; set; }
         public DateTime EklenmeTarihi { get; set; }

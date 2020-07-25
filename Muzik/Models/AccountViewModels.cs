@@ -8,7 +8,7 @@ namespace Muzik.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
     }
 
@@ -44,14 +44,14 @@ namespace Muzik.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         [EmailAddress]
         public string Email { get; set; }
 
@@ -60,7 +60,7 @@ namespace Muzik.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
     }
 
@@ -68,37 +68,38 @@ namespace Muzik.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "E-Posta*")]
+        [Display(Name = "E-Mail*")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Şifre*")]
+        [Display(Name = "Password*")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Şifreyi Doğrula*")]
+        [Display(Name = "Confirm Password*")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
         //kendi kullanıcı modelim
-        [Display(Name = "Grup Adı*")]
-        [Required(ErrorMessage = "Zorunlu alan!")]
+        [Display(Name = "Group Name*")]
+        [Required(ErrorMessage = "Required Field !")]
         [MaxLength(100)]
         public string GrupAdi { get; set; }
-        [Display(Name = "Kendinizi Tanıtın*")]
-        [Required(ErrorMessage = "Zorunlu alan!")]
+        [Display(Name = "Tell About Yourself*")]
+        [Required(ErrorMessage = "Required Field !")]
         public string Aciklama { get; set; }
-        [Display(Name = "Web Sitesi")]
+        [Display(Name = "Web Site")]
         public string WebSitesi { get; set; }
-        [Display(Name = "Grup Üyeleri")]
+        [Display(Name = "Group Members")]
         public string GrupUyeleri { get; set; }
+        [Display(Name = "Image")]
         public string Resim { get; set; }
-        [Display(Name = "YouTube Linki")]
+        [Display(Name = "YouTube Link")]
         public string YoutubeLinki { get; set; }
         [Required]
         public int? TurID { get; set; }
-        [Display(Name = "Grubun Kuruluş Tarihi")]
+        [Display(Name = "Group Start Date")]
         public DateTime? KurulusTarihi { get; set; }
     }
 
@@ -106,18 +107,18 @@ namespace Muzik.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "{0} en az {2} karakterli olmalıdır.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} must be at least {2} character.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "Şifreler birbiriyle uyuşmuyor.")]
+        [Compare("Password", ErrorMessage = "Passwords don't match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -127,7 +128,7 @@ namespace Muzik.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
     }
 }

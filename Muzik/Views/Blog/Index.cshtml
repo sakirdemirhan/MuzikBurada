@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Entitiy.Models.Blog>
 
 @{
-    ViewBag.Title = "Bloglar";
+    ViewBag.Title = "Blogs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,42 +9,42 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <p>
-        <h1 class="text-center">En Son Eklenen Blog Yazıları</h1>
+        <h1 class="text-center">Latest Blogs</h1>
     </p>
-    @if (User.IsInRole("Admin")|| User.IsInRole("BlogModerator"))
+    @if (User.IsInRole("Admin") || User.IsInRole("BlogModerator"))
     {
-        <a href="/Blog/Create"><h4>Yeni Blog Ekle <i class="fa fa-plus-circle"></i></h4></a>
+        <a href="/Blog/Create"><h4>Add New Blog <i class="fa fa-plus-circle"></i></h4></a>
     }
-     @foreach (var item in Model)
+    @foreach (var item in Model)
     {
         <div class="card mb-4">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @((item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik))
+                        @(Html.Raw("<p>" + (item.Icerik.Length > 400 ? item.Icerik.Substring(0, 400) + "..." : item.Icerik) + "</p>"))
                     </div>
                     <div class="col-lg-6">
                         <h2 class="card-title">@item.Baslik</h2>
                         <p class="card-text">@item.EklenmeTarihi.ToShortDateString()</p>
-                        <a href="/Blog/Detail/@item.BlogID" class="btn btn-primary">Daha Fazla &rarr;</a>
+                        <a href="/Blog/Detail/@item.BlogID" class="btn btn-info">More &rarr;</a>
                     </div>
                 </div>
             </div>
             <div class="card-footer text-muted">
-                <i class="fa fa-eye"></i> Görüntülenme: <b>@item.GoruntulenmeSayisi</b>  -
-                <i class="fa fa-comment-o"></i> Yorum: <b>@Muzik.Controllers.BlogController.YorumSayisi(item.BlogID)</b>  - 
+                <i class="fa fa-eye"></i> Views: <b>@item.GoruntulenmeSayisi</b>  -
+                <i class="fa fa-comment-o"></i> Comment: <b>@Muzik.Controllers.BlogController.YorumSayisi(item.BlogID)</b>  -
 
 
-                <i class="fa fa-hashtag"></i> Etiketler: @{
-                                                             var array = item.Etiket.Split(',');
-                                                             foreach (var i in array)
-                                                             {
-                                                                 <a href="/Blog/tags/@i.Trim()">
-                                                                     <span class="badge">#@i.Trim()</span>
-                                                                 </a>
-                                
-                                                             }
-                                                         }
+                <i class="fa fa-hashtag"></i> Tags: @{
+                    var array = item.Etiket.Split(',');
+                    foreach (var i in array)
+                    {
+                        <a href="/Blog/tags/@i.Trim()">
+                            <span class="badge">#@i.Trim()</span>
+                        </a>
+
+                    }
+                }
             </div>
         </div>
     }

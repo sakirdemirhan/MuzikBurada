@@ -6,25 +6,26 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entitiy.Models
 {
-    public class Kullanici:IdentityUser
+    public class Kullanici : IdentityUser
     {
-        [Required(ErrorMessage = "Zorunlu alan!")]
+        [Required(ErrorMessage = "Required Field !")]
         [MaxLength(100)]
-        [DisplayName("Grup Adı")]
+        [DisplayName("Group Name")]
         public string GrupAdi { get; set; }
-        [Required(ErrorMessage = "Zorunlu alan!")]
-        [DisplayName("Açıklama")]
+        [Required(ErrorMessage = "Required Field !")]
+        [DisplayName("Description")]
         public string Aciklama { get; set; }
         public string WebSite { get; set; }
+        [DisplayName("Image")]
         public string Resim { get; set; }
-        [DisplayName("YouTube Linki")]
+        [DisplayName("YouTube Link")]
         public string YoutubeLinki { get; set; }
-        [DisplayName("Grup Üyeleri")]
+        [DisplayName("Group Members")]
         public string GrupUyeleri { get; set; }
         public int Begeni { get; set; }
         [ForeignKey("KullaniciTur")]
         public int? TurID { get; set; }
-        [DisplayName("Kuruluş Tarihi")]
+        [DisplayName("Start Date")]
         public DateTime? KurulusTarihi { get; set; }
         public DateTime SiteKayitTarihi { get; set; }
         public virtual Tur KullaniciTur { get; set; }

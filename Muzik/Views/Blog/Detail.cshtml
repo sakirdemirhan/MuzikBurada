@@ -1,7 +1,7 @@
 ﻿@model Entitiy.Models.Blog
 
 @{
-    ViewBag.Title = "Blog Detay";
+    ViewBag.Title = "Blog Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Etiketler = Model.Etiket;
 }
@@ -13,7 +13,7 @@
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/Blog/Index">Bloglar</a>
+            <a href="/Blog/Index">Blogs</a>
         </li>
         <li class="breadcrumb-item active">@Model.Baslik</li>
     </ol>
@@ -29,43 +29,43 @@
             <hr>
 
             <!-- Date/Time -->
-            <p>@Model.EklenmeTarihi.ToShortDateString() tarihinde eklendi.</p>
+            <p>Added in @Model.EklenmeTarihi.ToShortDateString()</p>
 
             <hr>
 
             <!-- Post Content -->
             <p class="lead">@Html.Raw(Model.Icerik)</p>
 
-            
+
             <hr>
 
             <!-- Comments Form -->
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="card my-4">
-                    <h5 class="card-header">Yorum Yap:</h5>
+                    <h5 class="card-header">Comment:</h5>
                     <div class="card-body">
                         <form action="/Blog/YorumYap/@Model.BlogID" method="post">
                             <div class="form-group">
                                 <textarea class="form-control" rows="3" name="YorumIcerik" id="YorumIcerik"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Gönder</button>
+                            <button type="submit" class="btn btn-info">Send</button>
                         </form>
                     </div>
                 </div>
             }
-            
+
 
             <!-- Single Comment -->
             <div class="media mb-4">
-                
-                @Html.Action("Yorum", new {@id = @Model.BlogID })
+
+                @Html.Action("Yorum", new { @id = @Model.BlogID })
 
                 @*<img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                    <h5 class="mt-0">Commenter Name</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>*@
+                    <div class="media-body">
+                        <h5 class="mt-0">Commenter Name</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>*@
             </div>
 
         </div>
@@ -73,10 +73,10 @@
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
-            
+
             <!-- Categories Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Etiketler</h5>
+                <h5 class="card-header">Tags</h5>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6">
@@ -92,19 +92,8 @@
 
                                     }
                                 }
-                                </ul>
-                                @*<ul class="list-unstyled mb-0">
-                <li>
-                    <a href="#">Web Design</a>
-                </li>
-                <li>
-                    <a href="#">HTML</a>
-                </li>
-                <li>
-                    <a href="#">Freebies</a>
-                </li>
-            </ul>*@
-</div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

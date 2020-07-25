@@ -21,11 +21,11 @@
 
                     <thead>
 
-                    <th>Email</th>
-                    <th>Grup Adı</th>
-                    <th>Grup Üyeleri</th>
-                    <th class="text-center">Blog Moderatörü Yap</th>
-                    <th>Sil</th>
+                    <th>E-Mail</th>
+                    <th>Group Name</th>
+                    <th>Group Members</th>
+                    <th class="text-center">Make Blog Moderator</th>
+                    <th>Delete</th>
 
                     </thead>
                     <tbody>
@@ -58,15 +58,6 @@
                 </table>
 
                 <div class="clearfix"></div>
-                @*<ul class="pagination pull-right">
-                    <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                </ul>*@
 
             </div>
 
@@ -82,14 +73,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Kayıt Sil</h4>
+                <h4 class="modal-title">Delete Record</h4>
             </div>
             <div class="modal-body">
-                <p><span class="alert alert-danger">Bu kaydı silmek istediğinizden emin misiniz ?</span></p>
+                <p><span class="alert alert-danger">Are you sure to delete this record ?</span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
-                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Sil</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Delete</button>
             </div>
         </div>
 
@@ -112,7 +103,7 @@
                 window.location.reload();
             },
             error: function () {
-                alert('Kayıt silinirken hata oluştu');
+                alert('Error occured');
             }
         });
     });
@@ -127,14 +118,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Moderatör Yap</h4>
+                <h4 class="modal-title">Make Moderator</h4>
             </div>
             <div class="modal-body">
-                <p><span class="alert alert-danger">Bu kullanıcıyı blog moderatörü yapmak istediğinizden emin misiniz ?</span></p>
+                <p><span class="alert alert-danger">Are you sure to make this user blog moderator ?</span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
-                <button type="button" id="modalBtnMod" class="btn btn-success" data-dismiss="modal">Onayla</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" id="modalBtnMod" class="btn btn-success" data-dismiss="modal">Confirm</button>
             </div>
         </div>
 
@@ -157,7 +148,7 @@
                 window.location.reload();
             },
             error: function () {
-                alert('Hata oluştu');
+                alert('Error occured');
             }
         });
     });

@@ -1,64 +1,65 @@
 ﻿@model List<Entitiy.Models.Tur>
 @{
-    ViewBag.Title = "Anasayfa";
+    ViewBag.Title = "Home";
 }
-<header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active" style="background-image: url('http://www.pajimusic.com/couch/uploads/image/datei-24-08-16-18-09-13.jpeg')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>Kendinizi Gösterin</h3>
-                    <p>Yüzlerce grup arasında yerinizi alın.</p>
+    <header>
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div class="carousel-item active" style="background-image: url('/Content/img/slider3.jpg')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 style="background: #969696c7;">Show Yourself !</h3>
+                        <p style="background: #969696c7;">Get your place between thousands groups.</p>
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('/Content/img/slider1.jpeg')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Stage Is Yours !</h3>
+                        <p><strong>Share your best songs here.</strong></p>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('/Content/img/slider2.jpg')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Discover And Get Discovered</h3>
+                        <p>Amazing groups are here just like you.</p>
+                    </div>
                 </div>
             </div>
-            <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('https://images5.alphacoders.com/402/402221.jpg')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 style="color: black">Sahne Sizin</h3>
-                    <p style="color: black"><strong>En iyi şarkılarınızı burada paylaşın.</strong></p>
-                </div>
-            </div>
-            <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('http://nebula.wsimg.com/eea3d198a37b05e5481fb2c0e208b915?AccessKeyId=DAAB320EEEB245F8F1C3&disposition=0&alloworigin=1')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>Keşfedin ve Keşfedilin</h3>
-                    <p>Sizin gibi harika gruplar burada.</p>
-                </div>
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</header>
+    </header>
 <div class="container">
 
-    <h1 class="my-4 text-center">Farklı amatör müzik grupları ile tanışın.</h1>
+    <h1 class="my-4 text-center">Meet different amateur music groups.</h1>
 
     <!-- Marketing Icons Section -->
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header" style="background-color: white">@item.TurAdi</h4>
-                    <div class="card-body" style="background-color: #ff621b">
+                <div class="card h-100" style="box-shadow: 0 0 20px 1px #405a69;">
+                    <h4 class="card-header text-center" style="background-color: white">@item.TurAdi</h4>
+                    <div class="card-body" style="background-color: #405a69">
                         <p class="card-text" style="color: white">@item.TurAciklama</p>
                     </div>
                     <div class="card-footer">
                         <form action="/Home/Kesfet/@item.TurID" method="post">
-                            <input type="submit" class="btn btn-primary col-md-6" value="Keşfet" />
+                            <input type="submit" class="btn btn-outline-info col-md-6 offset-md-3" value="Discover" />
                         </form>
                     </div>
                 </div>
@@ -71,7 +72,6 @@
 
 
 </div>
-<script src="~/Content/vendor/jquery/jquery.min.js"></script>
 @if (User.Identity.IsAuthenticated == false)
 {
     @*<style>
@@ -111,5 +111,9 @@
             }
         }
     </script>*@
-
+    <script>
+        $('.carousel').carousel({
+  interval: 200000
+})
+    </script>
 }

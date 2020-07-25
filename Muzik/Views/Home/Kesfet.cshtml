@@ -4,14 +4,14 @@
 @model IEnumerable<Entitiy.Models.Kullanici>
 
 @{
-    ViewBag.Title = "Keşfet";
+    ViewBag.Title = "Discover";
 }
 
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
     <p>
-        <h1 class="text-center">En Son Eklenen Gruplar</h1>
+        <h1 class="text-center">Latest Groups</h1>
     </p>
 
     @foreach (var item in Model)
@@ -27,47 +27,47 @@
                     <div class="col-lg-6">
                         <h2 class="card-title">@item.GrupAdi</h2>
                         <p class="card-text">@item.Aciklama</p>
-                        <a href="/Home/GrupDetay/@item.Id" class="btn btn-primary">Daha Fazla &rarr;</a>
+                        <a href="/Home/GrupDetay/@item.Id" class="btn btn-info">More &rarr;</a>
                     </div>
                 </div>
             </div>
             <div class="card-footer text-muted">
-                Kuruluş Tarihi: @{
-                                    if (item.KurulusTarihi == null)
-                                    {
-                                        <b>"Belirtilmemiş"</b>
-                                    }
-                                    else
-                                    {
-                                        <b>@item.KurulusTarihi.Value.ToShortDateString()</b>
-                                    }
-                                }
-                - Tür: <b>@item.KullaniciTur.TurAdi</b>
-                - Grup Üyeleri: @{
-                                       if (item.GrupUyeleri==null)
-                                       {
-                                           <b>"Belirtilmemiş"</b>
-                                       }
-                                       else
-                                       {
-                                           <b>@item.GrupUyeleri</b>
-                                       }
-                                   }
+                Start Date: @{
+                    if (item.KurulusTarihi == null)
+                    {
+                        <b>"unspecified"</b>
+                    }
+                    else
+                    {
+                        <b>@item.KurulusTarihi.Value.ToShortDateString()</b>
+                    }
+                }
+                - Genre: <b>@item.KullaniciTur.TurAdi</b>
+                - Group Members: @{
+                    if (item.GrupUyeleri == null)
+                    {
+                        <b>"unspecified"</b>
+                    }
+                    else
+                    {
+                        <b>@item.GrupUyeleri</b>
+                    }
+                }
             </div>
         </div>
     }
 
-    
+
 
 
     <!-- Pagination -->
     @*<ul class="pagination justify-content-center mb-4">
-        <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
-        </li>
-        <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
-        </li>
-    </ul>*@
+            <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+        </ul>*@
 
 </div>

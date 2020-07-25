@@ -11,7 +11,7 @@
 
 
         <div class="col-md-12">
-            <a href="/Blog/Create"><h4>Yeni Blog Ekle <i class="fa fa-plus-circle"></i></h4></a>
+            <a href="/Blog/Create"><h4>Add New Blog <i class="fa fa-plus-circle"></i></h4></a>
 
             <div class="table-responsive">
 
@@ -20,11 +20,11 @@
 
                     <thead>
 
-                    <th>Başlık</th>
-                    <th>Etiketler</th>
-                    <th>Eklenme Tarihi</th>
-                    <th>Görüntülenme</th>
-                    <th>Sil</th>
+                    <th>Title</th>
+                    <th>Tags</th>
+                    <th>Create Date</th>
+                    <th>Views</th>
+                    <th>Delete</th>
 
                     </thead>
                     <tbody>
@@ -72,14 +72,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Kayıt Sil</h4>
+                <h4 class="modal-title">Delete Record</h4>
             </div>
             <div class="modal-body">
-                <p><span class="alert alert-danger">Bu kaydı silmek istediğinizden emin misiniz ?</span></p>
+                <p><span class="alert alert-danger">Are you sure to delete this record ?</span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
-                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Sil</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Delete</button>
             </div>
         </div>
 
@@ -101,7 +101,7 @@
                 window.location.reload();
             },
             error: function () {
-                alert('Kayıt silinirken hata oluştu');
+                alert('Error occured');
             }
         });
     });

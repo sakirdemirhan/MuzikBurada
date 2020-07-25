@@ -6,11 +6,11 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <p>
-        <h1 class="text-center">Bulunan Bloglar</h1>
+        <h1 class="text-center">Found Blogs</h1>
     </p>
     @if (!Model.Any())
     {
-        <div class="text-center col-md-12"><b>Aramanızla eşleşen bir blog yok !</b></div>
+        <div class="text-center col-md-12"><b>No any blog found !</b></div>
     }
 
     @foreach (var item in Model)
@@ -24,21 +24,21 @@
                     <div class="col-lg-6">
                         <h2 class="card-title">@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(item.Baslik, Session["aranacak"].ToString(), "yellow", false))</h2>
                         <p class="card-text">@item.EklenmeTarihi.ToShortDateString()</p>
-                        <a href="/Blog/Detail/@item.BlogID" class="btn btn-primary">Daha Fazla &rarr;</a>
+                        <a href="/Blog/Detail/@item.BlogID" class="btn btn-info">More &rarr;</a>
                     </div>
                 </div>
             </div>
             <div class="card-footer text-muted">
-                Etiketler: @{
-                               var array = item.Etiket.Split(',');
-                               foreach (var i in array)
-                               {
-                                   <a href="/Blog/tags/@i.Trim()">
-                                       <span class="badge">#@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(i.Trim(), Session["aranacak"].ToString(), "yellow", false))</span>
-                                   </a>
-                                
-                               }
-                           }
+                Tags: @{
+                    var array = item.Etiket.Split(',');
+                    foreach (var i in array)
+                    {
+                        <a href="/Blog/tags/@i.Trim()">
+                            <span class="badge">#@Html.Raw(Muzik.Controllers.HomeController.HighlightKeyWords(i.Trim(), Session["aranacak"].ToString(), "yellow", false))</span>
+                        </a>
+
+                    }
+                }
             </div>
         </div>
     }

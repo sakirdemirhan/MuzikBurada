@@ -648,6 +648,7 @@
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\BlogAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\muzikburada.pubxml" />
     <None Include="Properties\PublishProfiles\muzikburda.pubxml" />
     <Content Include="Web.config">

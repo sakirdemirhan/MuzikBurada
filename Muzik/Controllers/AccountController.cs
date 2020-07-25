@@ -90,7 +90,7 @@ namespace Muzik.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Email ya da şifre yanlış !");
+                    ModelState.AddModelError("", "E-Mail or password is not correct !");
                     return View(model);
             }
         }

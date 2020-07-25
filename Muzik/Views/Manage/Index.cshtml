@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Muzik.Models.IndexViewModel
 @{
-    ViewBag.Title = "Hesap Ayarları";
+    ViewBag.Title = "Account Settings";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,15 +11,15 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <br/><br /><br />
-            <h4>Hesap Ayarları</h4>
+                       <h4>Account Settings</h4>
             <hr/>
             <dl class="dl-horizontal">
-                <dt>Şifre:</dt>
+                <dt>Password:</dt>
                 <dd>
                     [
                     @if (Model.HasPassword)
                     {
-                        @Html.ActionLink("Şifreni Değiştir", "ChangePassword")
+                        @Html.ActionLink("Change Password", "ChangePassword")
                     }
                     else
                     {
@@ -27,7 +27,7 @@
                     }
                     ]
                 </dd>
-                <dt style="color: red">Hesabını Sil</dt>
+                <dt style="color: red">Delete your account</dt>
                 <dd>
                     <button type="button" class="btn btn-danger silBtn" style="cursor: pointer; width: 150px;" data-toggle="modal" data-target="#myModal" rel="@User.Identity.GetUserId()"><i class="fa fa-times"></i></button>
                 </dd>
@@ -44,17 +44,19 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4>Ciddi olamazsın !</h4>
+                <h4>Can't be serious !</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
             </div>
             <div class="modal-body">
-                <p><span style="color: red">Hesabını gerçekten silmek istediğine emin misin ? 
-                    <br/>Çünkü bunun geri dönüşü yok !</span></p>
+                <p><span style="color: red">
+    Are you sure to delete your account ?
+    <br />There's no turning back !
+</span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
-                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Sil</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" id="modalBtnSil" class="btn btn-danger" data-dismiss="modal">Delete</button>
             </div>
         </div>
 
@@ -76,7 +78,7 @@
                 
             },
             error: function () {
-                alert('Kayıt silinirken hata oluştu');
+                alert('Error occured');
             }
         });
     });
